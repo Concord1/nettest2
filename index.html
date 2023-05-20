@@ -12,7 +12,7 @@
               margin: 0 auto;
             }
          </style>
-         <script type="text/javascript" src="index.js"></script>
+         <script type = "text/javascript" src="index.js"></script>
     </head>
     <body style="background-color:lightblue;">
         <button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Start</h1></button>
@@ -22,21 +22,5 @@
             <p id="y">Y: </p>
             <p id="z">Z: </p>
         </div>
-        <div style="text-align:center; margin-top: 20px;">
-            <input type="text" id="serverAddress" placeholder="Enter server address" style="height: 30px; width: 300px;">
-            <button onclick="connectWebSocket()" style="height: 30px;">Connect</button>
-        </div>
-        <script src="/socket.io/socket.io.js"></script>
-
-        <script type="text/javascript">
-            function connectWebSocket() {
-                const serverAddress = document.getElementById("serverAddress").value;
-                const socket = io(serverAddress);
-                socket.on('connect', () => {
-                    document.write('Connected to Socket.IO server');
-                });
-                // WebSocket event handlers and data sending code here...
-            }
-        </script>
     </body>
 </html>
