@@ -1,58 +1,41 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>SocketIO Client</title>
-    <script src="/socket.io/socket.io.js"></script>
-  </head>
-  <body style="background-color:lightblue;">
-    <button id="accelPermsButton"  style="height:50px;" onclick="getAccel()"><h1>Start</h1></button>
-    <div class="card">
-        <h2>Gyroscope Values</h2>
-        <p id="x">X: </p>
-        <p id="y">Y: </p>
-        <p id="z">Z: </p>
-    </div>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Accelerometer Demo</title>
+        <style>
+            .card {
+              padding: 20px;
+              background-color: white;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              width: 300px;
+              margin: 0 auto;
+            }
+         </style>
+         <script type="text/javascript" src="main.js"></script>
+    </head>
+    <body style="background-color:lightblue;">
+        <div class="card">
+            <h2>Gyroscope Values</h2>
+            <p id="x">X: </p>
+            <p id="y">Y: </p>
+            <p id="z">Z: </p>
+        </div>
+        <div style="text-align:center; margin-top: 20px;">
+            <input type="text" id="serverAddress" placeholder="Enter server address" style="height: 30px; width: 300px;">
+            <button onclick="connectWebSocket()" style="height: 30px;">Connect</button>
+        </div>
+        <script src="/socket.io/socket.io.js"></script>
 
-
-    <!-- Client Code -->
-    <script type="text/javascript">
-
-      // Get WebSocket
-      var socket = io();
-
-      // Join a channel
-      var room = "test";
-      socket.emit("join", room);
-
-      function getAccel(){
-        
-        // Check for mobile user
-        var mobileUser = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        var permis = 'granted';
-        if(mobileUser){
-            socket.emit("accel", {x:"OK"})
-            DeviceMotionEvent.requestPermission().then(response => {
-            permis = response;
-            });
-        }                                
-        if (permis == 'granted') {
-            window.addEventListener('deviceorientation',(event) => {
-                x = event.alpha;
-                y = event.beta;
-                z = event.gamma;
-                var xElement = document.getElementById("x");
-                var yElement = document.getElementById("y");
-                var zElement = document.getElementById("z");
-                xElement.textContent = "X: " + x.toFixed(2);
-                yElement.textContent = "Y: " + y.toFixed(2);
-                zElement.textContent = "Z: " + z.toFixed(2);
-
-                socket.emit("accel", {x:x, y:y, z:z})
-
-            });
-        }
-    }
-    </script>
-  </body>
+        <script type="text/javascript">
+            function connectWebSocket() {
+                const serverAddress = document.getElementById("serverAddress").value;
+                const socket = io(serverAddress);
+                socket.on('connect', () => {
+                    document.write('Connected to Socket.IO server');
+                });
+                // WebSocket event handlers and data sending code here...
+            }
+        </script>
+    </body>
 </html>
