@@ -13,7 +13,7 @@ function getAccel(){
     const client = redis.createClient(redisOptions);
 
 
-    client.set('Hello', 'World');
+    client.set('Hello', 'yoyo');
 
 
     // Check for mobile user
