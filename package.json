@@ -2,7 +2,7 @@
     "name": "nettest2",
     "description": "Cross Device Communication using WebSockets",
     "scripts": {
-      "build": "browserify main.js -o bundle.js"        
+      "build": "browserify index.js -o bundle.js"
     },
     "main": "index.js",
     "license": "ISC",
