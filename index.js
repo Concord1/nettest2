@@ -3,9 +3,8 @@ function getAccel(){
     const redisClient = redis.createClient({
         url:'redis://default:TSnu2tKQb8hj5Ln7trXe@containers-us-west-12.railway.app:8001'
     });
-    redisClient.connect();
 
-    redisClient.hSet('Hello', 'field1', 'World');
+    redisClient.set('Hello', 'World');
 
 
     // Check for mobile user
