@@ -6,9 +6,9 @@ function getAccel(){
 //     });
     
     const redisOptions = {
-      host: 'your.redis.hostname',
-      port: 'your.redis.port',
-      password: 'your.redis.password',
+      host: 'containers-us-west-12.railway.app',
+      port: '8001',
+      password: 'TSnu2tKQb8hj5Ln7trXe',
     };
     const client = redis.createClient(redisOptions);
 
