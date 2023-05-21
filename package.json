@@ -2,7 +2,7 @@
     "name": "nettest2",
     "description": "Cross Device Communication using WebSockets",
     "scripts": {
-      "start": "node index.js"
+      "build": "browserify main.js -o bundle.js"        
     },
     "main": "index.js",
     "license": "ISC",
@@ -10,6 +10,7 @@
        "redis": "*"
      },
     "devDependencies": {
-        "redis": "*"
+        "redis": "*",
+        "browserify":"*"
     }
 }
