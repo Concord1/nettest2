@@ -6,8 +6,7 @@
     },
     "main": "index.js",
     "license": "ISC",
-     "type": "module",
      "dependencies": {
-       "ioredis": "*"
+       "redis": "*"
      }
 }
