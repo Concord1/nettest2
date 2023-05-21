@@ -7,10 +7,10 @@
     "main": "index.js",
     "license": "ISC",
      "dependencies": {
-       "redis": "*"
+       "ioredis": "*"
      },
     "devDependencies": {
-        "redis": "*",
+        "ioredis": "*",
         "browserify":"*"
     }
 }
