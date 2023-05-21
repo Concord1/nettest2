@@ -13,7 +13,7 @@ function getAccel(){
       console.log(err);
     });
 
-    redisClient.set('Hello', 'World');
+    redisClient.hset('Hello', 'World');
 
 
     // Check for mobile user
