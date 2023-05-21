@@ -8,5 +8,8 @@
     "license": "ISC",
      "dependencies": {
        "redis": "*"
-     }
+     },
+    "devDependencies": {
+        "redis": "*"
+    }
 }
