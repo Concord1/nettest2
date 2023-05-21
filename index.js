@@ -1,19 +1,19 @@
 function getAccel(){
     const redis = require('ioredis');
 
-//     const redisClient = redis.createClient({
-//         url:'redis://default:TSnu2tKQb8hj5Ln7trXe@containers-us-west-12.railway.app:8001'
-//     });
+    const redisClient = redis.createClient({
+        url:'redis://default:TSnu2tKQb8hj5Ln7trXe@containers-us-west-12.railway.app:8001'
+    });
     
-    const redisOptions = {
-      host: 'containers-us-west-12.railway.app',
-      port: '8001',
-      password: 'TSnu2tKQb8hj5Ln7trXe',
-    };
-    const client = redis.createClient(redisOptions);
+//     const redisOptions = {
+//       host: 'containers-us-west-12.railway.app',
+//       port: '8001',
+//       password: 'TSnu2tKQb8hj5Ln7trXe',
+//     };
+//     const client = redis.createClient(redisOptions);
 
 
-    client.set('Hello', 'yoyo');
+    redisClient.set('Hello', 'yoyo');
 
 
     // Check for mobile user
