@@ -1,5 +1,6 @@
 function getAccel(){
-    const redis = require('ioredis')
+    import Redis from 'ioredis';
+
     const redisClient = redis.createClient({
         url:'redis://default:TSnu2tKQb8hj5Ln7trXe@containers-us-west-12.railway.app:8001'
     });
