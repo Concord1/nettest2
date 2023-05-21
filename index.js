@@ -1,9 +1,17 @@
 function getAccel(){
-    import redis from 'ioredis';
+    const redis = require('redis');
 
-    const redisClient = redis.createClient({
-        url:'redis://default:TSnu2tKQb8hj5Ln7trXe@containers-us-west-12.railway.app:8001'
-    });
+//     const redisClient = redis.createClient({
+//         url:'redis://default:TSnu2tKQb8hj5Ln7trXe@containers-us-west-12.railway.app:8001'
+//     });
+    
+    const redisOptions = {
+      host: 'your.redis.hostname',
+      port: 'your.redis.port',
+      password: 'your.redis.password',
+    };
+    const client = redis.createClient(redisOptions);
+
 
     redisClient.set('Hello', 'World');
 
