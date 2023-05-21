@@ -1,9 +1,11 @@
 function getAccel(){
     const redis = require('redis')
     const redisClient = redis.createClient({
-      host: 'containers-us-west-12.railway.app',
-      port: 8001,
-      password: 'TSnu2tKQb8hj5Ln7trXe'
+        url:redis://default:TSnu2tKQb8hj5Ln7trXe@containers-us-west-12.railway.app:8001
+        
+//       host: 'containers-us-west-12.railway.app',
+//       port: 8001,
+//       password: 'TSnu2tKQb8hj5Ln7trXe'
     });
 
     redisClient.on('error', err => {
