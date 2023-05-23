@@ -1,15 +1,15 @@
 function getAccel(){
     
     try {
-            require(['foo'], function (foo) {
+            require(['redis'], function (redis) {
     //foo is now loaded.
     
         
-    var red = require('redis');
+//     var red = require('redis');
 
 
 
-        const client = red.createClient({
+        const client = redis.createClient({
             password: '84rJ6VbP7OM7zPeYhOzuLr7NW0PDtENX',
             socket: {
                 host: 'redis-13485.c265.us-east-1-2.ec2.cloud.redislabs.com',
