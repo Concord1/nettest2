@@ -7,9 +7,9 @@
     "main": "index.js",
     "license": "ISC",
      "dependencies": {
-       "ioredis": "*"
+       "redis": "*"
      },
     "devDependencies": {
-        "ioredis": "*"
+        "redis": "*"
     }
 }
