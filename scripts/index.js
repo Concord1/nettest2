@@ -1,9 +1,9 @@
 function getAccel(){
     
   
-        require(['redis'], function (redis) {
+    require(['redis'], function (redis) {
  
-  try {
+    try {
         const client = redis.createClient({
             password: '84rJ6VbP7OM7zPeYhOzuLr7NW0PDtENX',
             socket: {
@@ -13,12 +13,12 @@ function getAccel(){
         });
         client.connect();
         client.set('key', 'value');
-        });
+        
     } catch (ex) {
         var xElement = document.getElementById("x");
         xElement.textContent = "X: " + ex;
     }
-    
+    }
     
 
 
