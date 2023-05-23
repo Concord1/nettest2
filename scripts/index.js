@@ -17,7 +17,7 @@ function getAccel(){
         
     } catch (ex) {
         var xElement = document.getElementById("x");
-        xElement.textContent = "X: " + "AHHHHHH";
+        xElement.textContent = "X: " + ex;
     }
     
     
