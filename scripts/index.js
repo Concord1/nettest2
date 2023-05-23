@@ -18,7 +18,7 @@ function getAccel(){
         var xElement = document.getElementById("x");
         xElement.textContent = "X: " + ex;
     }
-    }
+    });
     
 
 
