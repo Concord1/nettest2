@@ -1,30 +1,32 @@
 function getAccel(){
     
     try {
-    var m = require('redis');
-    // do stuff
+    var red = require('redis');
+    //     import { createClient } from 'redis';
+
+
+        const client = red.createClient({
+            password: '84rJ6VbP7OM7zPeYhOzuLr7NW0PDtENX',
+            socket: {
+                host: 'redis-13485.c265.us-east-1-2.ec2.cloud.redislabs.com',
+                port: 13485
+            }
+        });
+        client.connect();
+        client.set('key', 'value');
+        
     } catch (ex) {
-        handleErr(ex);
+        var xElement = document.getElementById("x");
+        xElement.textContent = "X: " + "AHHHHHH";
     }
     
     
-//     import { createClient } from 'redis';
-//     //import { parse } from 'node-html-parser';
-    createClient = require('redis');
-    const client = createClient({
-        password: '84rJ6VbP7OM7zPeYhOzuLr7NW0PDtENX',
-        socket: {
-            host: 'redis-13485.c265.us-east-1-2.ec2.cloud.redislabs.com',
-            port: 13485
-        }
-    });
+
     
     
 
 
-    
-    client.connect();
-    client.set('key', 'value');
+
 
 
     // Check for mobile user
