@@ -1,14 +1,9 @@
 function getAccel(){
     
-    try {
-            require(['redis'], function (redis) {
-    //foo is now loaded.
-    
-        
-//     var red = require('redis');
-
-
-
+  
+        require(['redis'], function (redis) {
+ 
+  try {
         const client = redis.createClient({
             password: '84rJ6VbP7OM7zPeYhOzuLr7NW0PDtENX',
             socket: {
