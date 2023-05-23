@@ -11,6 +11,5 @@
      },
     "devDependencies": {
         "ioredis": "*",
-        "browserify":"*"
     }
 }
