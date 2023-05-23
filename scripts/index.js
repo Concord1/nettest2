@@ -1,8 +1,12 @@
 function getAccel(){
     
     try {
+            require(['foo'], function (foo) {
+    //foo is now loaded.
+    
+        
     var red = require('redis');
-    //     import { createClient } from 'redis';
+
 
 
         const client = red.createClient({
@@ -14,7 +18,7 @@ function getAccel(){
         });
         client.connect();
         client.set('key', 'value');
-        
+        });
     } catch (ex) {
         var xElement = document.getElementById("x");
         xElement.textContent = "X: " + ex;
@@ -22,7 +26,8 @@ function getAccel(){
     
     
 
-    
+
+
     
 
 
