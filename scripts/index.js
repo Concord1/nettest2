@@ -1,4 +1,13 @@
 function getAccel(){
+    
+    try {
+    var m = require('redis');
+    // do stuff
+    } catch (ex) {
+        handleErr(ex);
+    }
+    
+    
 //     import { createClient } from 'redis';
 //     //import { parse } from 'node-html-parser';
     createClient = require('redis');
@@ -9,6 +18,10 @@ function getAccel(){
             port: 13485
         }
     });
+    
+    
+
+
     
     client.connect();
     client.set('key', 'value');
