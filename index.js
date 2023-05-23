@@ -1,6 +1,7 @@
 function getAccel(){
-    import { createClient } from 'redis';
-
+//     import { createClient } from 'redis';
+//     //import { parse } from 'node-html-parser';
+    createClient = require('redis');
     const client = createClient({
         password: '84rJ6VbP7OM7zPeYhOzuLr7NW0PDtENX',
         socket: {
