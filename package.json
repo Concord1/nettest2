@@ -6,7 +6,6 @@
     },
     "main": "index.js",
     "license": "ISC",
-    "type": "module",
      "dependencies": {
        "redis": "*"
      },
