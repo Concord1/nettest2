@@ -5,12 +5,9 @@ function getAccel(){
  
     try {
         const client = redis.createClient({
-            password: '84rJ6VbP7OM7zPeYhOzuLr7NW0PDtENX',
-            socket: {
-                host: 'redis-13485.c265.us-east-1-2.ec2.cloud.redislabs.com',
-                port: 13485
-            }
+          url: 'redis://default:84rJ6VbP7OM7zPeYhOzuLr7NW0PDtENX@redis-13485.c265.us-east-1-2.ec2.cloud.redislabs.com:13485'
         });
+        client.on('error', err => console.log('Redis Client Error', err));
         client.connect();
         client.set('key', 'value');
         
